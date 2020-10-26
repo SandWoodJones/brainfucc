@@ -32,7 +32,7 @@ int main(){
 				programMemory[index]--;
 				break;
 			case '.':
-				std::cout << +programMemory[index];
+				std::cout << +programMemory[index]; // '+' before an 8bit integer tells program to output it as number and not character
 				break;
 			default:
 				break;
