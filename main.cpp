@@ -3,7 +3,7 @@
 
 #define MAX_CELLS 10
 int main(){
-	char programMemory[MAX_CELLS] = {0};
+	unsigned char programMemory[MAX_CELLS] = {0};
 	char instruction;
 	std::string input;
 	int index = 0;
@@ -32,12 +32,20 @@ int main(){
 				programMemory[index]--;
 				break;
 			case '.':
-				std::cout << +programMemory[index]; // '+' before an 8bit integer tells program to output it as number and not character
+				std::cout << programMemory[index];
+				break;
+			case ',':
+				programMemory[index] = getchar();
+				break;
+			case '[':
+				break;
+			case ']':
 				break;
 			default:
 				break;
 		}
 	}
+
 	std::cout << std::endl;
 	return 0;
 }
